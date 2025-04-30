@@ -1,0 +1,9 @@
+# Prevent uploading your secrets & files
+.env
+uploads/
+chat_logs.txt
+__pycache__/
+*.pyc
+venv/
+*.sqlite3
+*.db
