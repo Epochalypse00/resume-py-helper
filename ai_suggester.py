@@ -11,7 +11,13 @@ load_dotenv(dotenv_path=env_path)
 
 # Load OpenAI API key
 api_key = os.getenv("OPENAI_API_KEY")
-print("API Key Loaded:", api_key)
+
+if api_key:
+    print("✅ OpenAI API key loaded successfully.")
+else:
+    print("❌ API key not found.")
+
+
 
 # Function to get resume suggestions
 def get_resume_suggestions(resume_text, job_description):
@@ -37,7 +43,7 @@ Do not rewrite the whole resume. Focus on missing areas, skill gaps, or better p
     }
 
     data = {
-        "model": "gpt-3.5-turbo",  # Use "gpt-4" if you have access
+        "model": "gpt-4",  # Use "gpt-4" if you have access
         "messages": [
             {"role": "system", "content": "You are a helpful resume improvement assistant."},
             {"role": "user", "content": prompt}
